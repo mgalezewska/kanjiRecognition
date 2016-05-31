@@ -2,13 +2,13 @@
  * Created by galezewska on 2016-05-31.
  */
 
-var canvas = document.getElementById('myCanvas');
+var canvas = document.getElementById('boardKanji');
 var canvasSVGContext = new CanvasSVG.Deferred();
 canvasSVGContext.wrapCanvas(canvas);
 var ctx = canvas.getContext('2d');
 
 
-var painting = document.getElementById('paint');
+var painting = document.getElementById('board');
 var paint_style = getComputedStyle(painting);
 canvas.width = parseInt(paint_style.getPropertyValue('width'));
 canvas.height = parseInt(paint_style.getPropertyValue('height'));
@@ -34,7 +34,7 @@ canvas.addEventListener('mousedown', function(e) {
 
 canvas.addEventListener('mouseup', function() {
     canvas.removeEventListener('mousemove', onPaint, false);
-    var svg = document.getElementById("captions");
+    var svg = document.getElementById("svgKanji");
     while (svg.firstChild) {
         svg.removeChild(svg.firstChild);
     }
